@@ -29,6 +29,7 @@ public class VendingMachineTest {
     @Test
     public void testInsertCoinAndSelectProduct() {
         VendingMachine vendingMachine = new VendingMachine();
+        assertEquals("Insufficient credit", vendingMachine.selectProduct(1));
         vendingMachine.insertCoin(5);
         assertEquals("Soda", vendingMachine.selectProduct(2));
     }
@@ -36,7 +37,7 @@ public class VendingMachineTest {
     @Test
     public void testSelectProductInsufficientCredit() {
         VendingMachine vendingMachine = new VendingMachine();
-        vendingMachine.insertCoin(2);
+        vendingMachine.insertCoin(1);
         assertEquals("Insufficient credit", vendingMachine.selectProduct(1));
     }
 

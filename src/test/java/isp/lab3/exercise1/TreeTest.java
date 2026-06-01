@@ -8,6 +8,7 @@ public class TreeTest {
     @Test
     public void testGrowAddsMeters() {
         Tree tree = new Tree();
+        assertEquals("15", tree.toString());
         tree.grow(5);
         assertEquals("20", tree.toString());
     }
@@ -15,6 +16,7 @@ public class TreeTest {
     @Test
     public void testGrowIgnoresNonPositiveMeters() {
         Tree tree = new Tree();
+        assertEquals("15", tree.toString());
         tree.grow(0);
         tree.grow(-3);
         assertEquals("15", tree.toString());
