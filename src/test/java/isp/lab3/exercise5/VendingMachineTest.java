@@ -39,4 +39,11 @@ public class VendingMachineTest {
         vendingMachine.insertCoin(2);
         assertEquals("Insufficient credit", vendingMachine.selectProduct(1));
     }
+
+    @Test
+    public void testSelectProductInvalidSelection() {
+        VendingMachine vendingMachine = new VendingMachine();
+        assertEquals("Invalid selection", vendingMachine.selectProduct(0));
+        assertEquals("Invalid selection", vendingMachine.selectProduct(10));
+    }
 }
